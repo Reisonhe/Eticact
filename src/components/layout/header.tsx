@@ -4,6 +4,7 @@ import { MobileNav } from './mobile-nav';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
+import { ThemeToggle } from '../theme-toggle';
 
 const navLinks = [
   { href: '#about', label: 'Sobre' },
@@ -47,8 +48,10 @@ export default function Header() {
           <Button asChild size="sm">
             <a href="#contact">Contato</a>
           </Button>
+          <ThemeToggle />
         </nav>
-        <div className="md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
           <MobileNav navLinks={navLinks} />
         </div>
       </div>
